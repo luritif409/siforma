@@ -1,0 +1,121 @@
+<mxfile>
+  <diagram name="ERD Sistem Akademik">
+    <mxGraphModel dx="800" dy="600" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- Tabel-tabel -->
+        <mxCell value="m_users" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1" mxGeometry="{x:50,y:50,width:120,height:80}">
+          <mxGeometry x="50" y="50" width="120" height="80" as="geometry"/>
+        </mxCell>
+
+        <mxCell value="m_roles" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1" mxGeometry="{x:50,y:150,width:120,height:80}">
+          <mxGeometry x="50" y="150" width="120" height="80" as="geometry"/>
+        </mxCell>
+
+        <mxCell value="m_fakultas" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1" mxGeometry="{x:200,y:50,width:120,height:80}">
+          <mxGeometry x="200" y="50" width="120" height="80" as="geometry"/>
+        </mxCell>
+
+        <mxCell value="m_prodi" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1" mxGeometry="{x:200,y:150,width:120,height:80}">
+          <mxGeometry x="200" y="150" width="120" height="80" as="geometry"/>
+        </mxCell>
+
+        <mxCell value="m_matkul" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1" mxGeometry="{x:350,y:150,width:120,height:80}">
+          <mxGeometry x="350" y="150" width="120" height="80" as="geometry"/>
+        </mxCell>
+
+        <mxCell value="m_kurikulum" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1" mxGeometry="{x:350,y:50,width:120,height:80}">
+          <mxGeometry x="350" y="50" width="120" height="80" as="geometry"/>
+        </mxCell>
+
+        <mxCell value="m_kurikulum_detail" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1" mxGeometry="{x:500,y:100,width:140,height:80}">
+          <mxGeometry x="500" y="100" width="140" height="80" as="geometry"/>
+        </mxCell>
+
+        <mxCell value="m_pengampu" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1" mxGeometry="{x:670,y:100,width:120,height:80}">
+          <mxGeometry x="670" y="100" width="120" height="80" as="geometry"/>
+        </mxCell>
+
+        <mxCell value="m_dosen" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1" mxGeometry="{x:820,y:100,width:120,height:80}">
+          <mxGeometry x="820" y="100" width="120" height="80" as="geometry"/>
+        </mxCell>
+
+        <mxCell value="m_mahasiswa" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1" mxGeometry="{x:200,y:300,width:120,height:80}">
+          <mxGeometry x="200" y="300" width="120" height="80" as="geometry"/>
+        </mxCell>
+
+        <mxCell value="m_status_mahasiswa" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1" mxGeometry="{x:50,y:300,width:120,height:80}">
+          <mxGeometry x="50" y="300" width="120" height="80" as="geometry"/>
+        </mxCell>
+
+        <mxCell value="nilai_mahasiswa" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1" mxGeometry="{x:350,y:300,width:140,height:80}">
+          <mxGeometry x="350" y="300" width="140" height="80" as="geometry"/>
+        </mxCell>
+
+        <mxCell value="m_skala_nilai" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1" mxGeometry="{x:500,y:300,width:120,height:80}">
+          <mxGeometry x="500" y="300" width="120" height="80" as="geometry"/>
+        </mxCell>
+
+        <mxCell value="m_jadwal_kuliah" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1" mxGeometry="{x:670,y:250,width:140,height:80}">
+          <mxGeometry x="670" y="250" width="140" height="80" as="geometry"/>
+        </mxCell>
+
+        <mxCell value="m_ruang" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1" mxGeometry="{x:820,y:250,width:120,height:80}">
+          <mxGeometry x="820" y="250" width="120" height="80" as="geometry"/>
+        </mxCell>
+
+        <mxCell value="m_jam_kuliah" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1" mxGeometry="{x:820,y:180,width:120,height:80}">
+          <mxGeometry x="820" y="180" width="120" height="80" as="geometry"/>
+        </mxCell>
+
+        <!-- Relasi -->
+        <mxCell edge="1" source="1" target="2" value="" style="endArrow=classic;html=1;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell edge="1" source="3" target="4" value="" style="endArrow=classic;html=1;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell edge="1" source="4" target="5" value="" style="endArrow=classic;html=1;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell edge="1" source="6" target="7" value="" style="endArrow=classic;html=1;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell edge="1" source="7" target="5" value="" style="endArrow=classic;html=1;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell edge="1" source="8" target="9" value="" style="endArrow=classic;html=1;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell edge="1" source="9" target="10" value="" style="endArrow=classic;html=1;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell edge="1" source="11" target="12" value="" style="endArrow=classic;html=1;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell edge="1" source="13" target="14" value="" style="endArrow=classic;html=1;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell edge="1" source="14" target="15" value="" style="endArrow=classic;html=1;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell edge="1" source="15" target="16" value="" style="endArrow=classic;html=1;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,42 @@
+siforma/
+│
+├── siforma/               # Package utama aplikasi
+│   ├── __init__.py            # Inisialisasi app & extensions
+│   ├── config.py              # Konfigurasi (development, production)
+│   │
+│   ├── routes/                # Route/controller
+│   │   ├── __init__.py
+│   │   └── main_routes.py     # Contoh route utama
+│   │
+│   ├── models/                # Model database
+│   │   ├── __init__.py
+│   │   └── user.py            # Contoh model User
+│   │
+│   ├── services/              # Logika bisnis
+│   │   ├── __init__.py
+│   │   └── user_service.py    # Contoh logika service
+│   │
+│   ├── templates/             # HTML templates (Jinja2)
+│   │   └── base.html
+│   │   └── home.html
+│   │
+│   ├── static/                # CSS, JS, gambar
+│   │   └── style.css
+│   │
+│   └── utils/                 # Helper functions
+│       └── helpers.py         # Fungsi bantu
+│
+├── instance/                  # File lokal (tidak di-commit ke git)
+│   └── config.py              # Config private / development
+│
+├── migrations/                # Migrasi database (Flask-Migrate)
+│   └── versions/              # Tempat migrasi otomatis
+│
+├── tests/                     # Unit test
+│   └── test_app.py            # Contoh unit test
+│
+├── venv/                      # Virtual environment (opsional, tidak di-commit)
+│
+├── requirements.txt           # Daftar package Python
+├── wsgi.py                    # Untuk deploy
+└── run.py                     # File entry point

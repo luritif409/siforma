@@ -1,0 +1,133 @@
+tabel 
+m_users
+m_roles
+m_prodi
+m_fakultas
+m_matkul
+m_kurikulum
+m_kurikulum_detail
+m_dosen
+m_mahasiswa
+m_kelas
+m_semester
+m_tahun_ajaran
+m_ruang
+m_jam_kuliah
+m_jadwal_kuliah
+m_pengampu
+m_status_mahasiswa
+m_skala_nilai
+m_komponen_nilai
+m_nilai_mahasiswa
+m_program_pendidikan
+m_unit
+m_mitra
+	
+	
+d_kurikulum
+d_rps
+d_sap
+d_penelitian
+d_pengabdian
+d_akreditasi
+d_laporan_tahunan
+d_rapat
+d_administrasi_umum
+d_kerjasama	
+
+d_all_dokumen
+
+
+CREATE TABLE m_categories (
+    category_id INT PRIMARY KEY AUTO_INCREMENT,
+    category_name VARCHAR(100) NOT NULL,
+    parent_id INT DEFAULT NULL, -- untuk nested folder seperti subkategori
+    is_active BOOLEAN DEFAULT TRUE
+);
+
+
+CREATE TABLE m_users (
+    user_id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(100),
+    email VARCHAR(100) UNIQUE,
+    password_hash VARCHAR(255),
+    role ENUM('admin', 'dosen', 'mahasiswa'),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE t_documents (
+    document_id INT PRIMARY KEY AUTO_INCREMENT,
+    title VARCHAR(255),
+    description TEXT,
+    filename VARCHAR(255),
+    file_path TEXT,
+    file_type VARCHAR(10),
+    file_size INT,
+    upload_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    uploaded_by INT,
+    category_id INT,
+    related_year YEAR,
+    is_active BOOLEAN DEFAULT TRUE,
+    version VARCHAR(10),
+
+    FOREIGN KEY (uploaded_by) REFERENCES m_users(user_id),
+    FOREIGN KEY (category_id) REFERENCES m_categories(category_id)
+);
+
+CREATE TABLE m_students (
+    student_id INT PRIMARY KEY AUTO_INCREMENT,
+    nim VARCHAR(20) UNIQUE,
+    name VARCHAR(100),
+    angkatan YEAR,
+    email VARCHAR(100),
+    kip_status BOOLEAN,
+    user_id INT,
+    FOREIGN KEY (user_id) REFERENCES m_users(user_id)
+);
+
+CREATE TABLE m_lecturers (
+    lecturer_id INT PRIMARY KEY AUTO_INCREMENT,
+    nidn VARCHAR(20) UNIQUE,
+    name VARCHAR(100),
+    jabatan_fungsional VARCHAR(50),
+    email VARCHAR(100),
+    user_id INT,
+    FOREIGN KEY (user_id) REFERENCES m_users(user_id)
+);
+
+CREATE TABLE t_thesis_proposals (
+    proposal_id INT PRIMARY KEY AUTO_INCREMENT,
+    student_id INT,
+    title VARCHAR(255),
+    bidang_ilmu VARCHAR(100),
+    pembimbing_1 INT,
+    pembimbing_2 INT,
+    proposal_file_id INT,
+    status ENUM('draft', 'submitted', 'approved', 'rejected'),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+
+    FOREIGN KEY (student_id) REFERENCES m_students(student_id),
+    FOREIGN KEY (pembimbing_1) REFERENCES m_lecturers(lecturer_id),
+    FOREIGN KEY (pembimbing_2) REFERENCES m_lecturers(lecturer_id),
+    FOREIGN KEY (proposal_file_id) REFERENCES t_documents(document_id)
+);
+
+CREATE TABLE t_partnerships (
+    partnership_id INT PRIMARY KEY AUTO_INCREMENT,
+    institution_name VARCHAR(255),
+    document_id INT,
+    start_date DATE,
+    end_date DATE,
+    FOREIGN KEY (document_id) REFERENCES t_documents(document_id)
+);
+
+CREATE TABLE h_document_logs (
+    log_id INT PRIMARY KEY AUTO_INCREMENT,
+    document_id INT,
+    action ENUM('upload', 'update', 'delete'),
+    performed_by INT,
+    timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (document_id) REFERENCES t_documents(document_id),
+    FOREIGN KEY (performed_by) REFERENCES m_users(user_id)
+);
+

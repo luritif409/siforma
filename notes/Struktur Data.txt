@@ -1,0 +1,214 @@
+1. Manajemen Pengguna
+Tabel	Fungsi
+users	Menyimpan data akun pengguna (admin, dosen, operator)
+roles	Menentukan peran/akses pengguna
+
+2. Dosen & Mahasiswa
+Tabel	Fungsi
+lecturers	Data dosen: nama, NIDN, email
+students	Data mahasiswa: NIM, nama, angkatan, status KIP
+
+3. Dokumen Akademik
+Tabel	Fungsi
+documents	Metadata semua dokumen (judul, file, tanggal unggah)
+categories	Kategori dokumen seperti RPS, Kurikulum, Skripsi
+student_documents	Relasi dokumen ↔ mahasiswa
+lecturer_documents	Relasi dokumen ↔ dosen
+
+
+
+
+Tabel	Fungsi
+curriculum	Info kurikulum (tahun, nama, SK)
+courses	Daftar mata kuliah
+cpl_mapping	Peta CPL dan MK (Course Learning Outcome)
+rps	Rencana Pembelajaran Semester
+sap	Satuan Acara Perkuliahan
+
+5. Skripsi & Kegiatan Mahasiswa
+Tabel	Fungsi
+thesis_proposals	Proposal skripsi mahasiswa
+internships	Data kerja praktik (judul, instansi, pembimbing)
+student_activities	Data kegiatan: MBKM, kunjungan industri, dll.
+
+
+
+7. Akreditasi
+Tabel	Fungsi
+lkps	Laporan Kinerja Program Studi
+led	Laporan Evaluasi Diri
+supporting_documents	Bukti-bukti akreditasi
+
+8. Administrasi Umum
+Tabel	Fungsi
+meeting_minutes	Notulen rapat
+official_letters	Surat masuk dan keluar
+sk_documents	SK dan keputusan prodi/dekanat
+
+
+
+partner_institutions	Nama mitra kerjasama (kampus, industri)
+
+10. Laporan & Evaluasi
+Tabel	Fungsi
+annual_reports	Laporan tahunan prodi
+evaluations	Hasil evaluasi internal/eksternal
+
+
+6. Penelitian & PkM Dosen
+Tabel	Fungsi
+research	Judul penelitian dosen, pendanaan, luaran
+pkm	Pengabdian kepada masyarakat
+research_outputs	Luaran penelitian: jurnal, HKI, buku
+penelitian 
+pengmas 
+berdasarkan dosen relasi dengan tabel dosen
+
+9. Kerjasama
+undangan
+daftar hadir
+Data MOU & MOA
+laporan
+
+4. Kurikulum & RPS
+Buku kuirikulum
+
+
+5. RPS
+
+
+📁 Prodi_Teknik_Informatika/
+├── 📁 Kurikulum/
+│   ├── Dokumen_Kurikulum_2024.pdf
+│   ├── Peta_CPL_MK/
+│   └── SK_Kurikulum/
+├── 📁 RPS_dan_SAP/
+│   ├── RPS_Semester_Ganjil/
+│   └── RPS_Semester_Genap/
+├── 📁 Dosen/
+│   ├── Data_Dosen/
+│   ├── Jadwal_Mengajar/
+│   └── Sertifikat_PAK/
+├── 📁 Mahasiswa/
+│   ├── 📁 Data_Mahasiswa_Umum/
+│   ├── 📁 Data_Mahasiswa_KIP/
+│   ├── 📁 Transkrip_Nilai/
+│   ├── 📁 Proposal_Skripsi/
+│   ├── 📁 Tracer_Study/
+│   └── 📁 Kegiatan_Mahasiswa/
+│       ├── 📁 Kerja_Praktek/
+│       ├── 📁 Kunjungan_Industri/
+│       └── 📁 MBKM_Konversi/
+├── 📁 Prestasi/
+│   ├── Mahasiswa/
+│   └── Dosen/
+├── 📁 Akreditasi/
+│   ├── LKPS/
+│   ├── LED/
+│   ├── Bukti_Pendukung/
+│   └── Laporan_Evaluasi/
+├── 📁 Penelitian_dan_PkM/
+│   ├── Data_Penelitian_Dosen/
+│   ├── Data_PkM/
+│   └── Luaran_Penelitian/
+├── 📁 Kerjasama/
+│   └── Undangan/
+│   └── Daftar Hadir/
+│   └── MOU_MOA/
+│   └── Laporan/
+├── 📁 Laporan_Tahunan/
+│   ├── Laporan_2023.pdf
+│   └── Laporan_2024.pdf
+└── 📁 Rapat/
+│   └── Undangan/
+│   └── Daftar Hadir/
+│   └── Notulensi Rapat
+└── 📁 Administrasi_Umum/
+    ├── SK_dan_Keputusan/
+    └── Surat_Masuk_Keluar/
+	
+	master data yang bisa bertambah namun tidak sering brubaha2
+	users
+	dosen
+	mahasiswa
+	ruang
+	matkul
+	document_kategori 
+		1. kurikulum
+		2. RPS
+		3. mahasiwa
+		4. dosen
+		5. mahasiswa
+		6. akreditasi
+		7. penelitian
+		8. pengabdian
+		9. kerjasama
+		10. laporan_tahunan
+		11. rapat
+		12. administrasi_umum
+		13. SAP
+	doument_type /child document_kategory
+		1. kurikulum
+		 a. Buku_Kurikulum
+		 b. dokumen_kurikulum
+		 c. sk_kurikulum
+		2. RPS
+		3. mahasiwa
+			kelas : pagi, malam, karyawan, rpl
+			KIP : Y / N
+		4. dosen
+		6. akreditasi
+		7. penelitian
+		   tingkat : nasional / inyernasional
+		8. pengabdian
+			type : jurnal / laporan
+		9. kerjasama
+			tingkat : nasional / internasional
+		10. laporan_tahunan
+		11. rapat
+		12. administrasi_umum
+	document
+	
+	transaksi data yang terus bertamabh dan sering berubah2
+	
+	
+	
+	
+tabel 
+m_users
+m_roles
+m_prodi
+m_fakultas
+m_matkul
+m_kurikulum
+m_kurikulum_detail
+m_dosen
+m_mahasiswa
+m_kelas
+m_semester
+m_tahun_ajaran
+m_ruang
+m_jam_kuliah
+m_jadwal_kuliah
+m_pengampu
+m_status_mahasiswa
+m_skala_nilai
+m_komponen_nilai
+m_nilai_mahasiswa
+m_program_pendidikan
+m_unit
+m_mitra
+	
+	
+d_kurikulum
+d_rps
+d_sap
+d_penelitian
+d_pengabdian
+d_akreditasi
+d_laporan_tahunan
+d_rapat
+d_administrasi_umum
+d_kerjasama	
+
+d_all_dokumen

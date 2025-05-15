@@ -1,0 +1,11 @@
+﻿Nama Dokumen,Jenis Data,Keterangan
+kurikulum,Dokumen Akademik,Bisa juga master jika hanya ada satu kurikulum aktif
+RPS,Dokumen Perkuliahan,Terkait dengan matkul, bukan master utama
+akreditasi,Dokumen Lembaga,Dinamis tapi bisa jadi master jika per periode
+penelitian,Dokumen Hasil Penelitian,Relasi ke dosen
+pengabdian,Dokumen Kegiatan,Relasi ke dosen
+kerjasama,Dokumen Kerja Sama,Relasi ke mitra atau unit
+laporan_tahunan,Dokumen Internal,Biasanya tahunan, bukan master
+rapat,Dokumen Rapat,Lebih ke transaksi
+administrasi_umum,Dokumen Administratif,Lebih ke dokumen operasional
+SAP,Dokumen Silabus,Terkait dengan matkul
